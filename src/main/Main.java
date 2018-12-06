@@ -23,7 +23,7 @@ public class Main {
 		ventana.setLocationRelativeTo(null);
 		ventana.setContentPane((JPanel) vistaPrincipal);
 		ventana.pack();
-
+		System.out.print("Hola");
 		
 		
 	}

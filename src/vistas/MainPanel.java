@@ -8,12 +8,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class PanelPrincipal extends JPanel implements VistaPrincipal {
+public class MainPanel extends JPanel implements MainView {
 	
 	private JButton jBCliente;
 	private JButton jBServidor;
 	
-	public PanelPrincipal() {
+	public MainPanel() {
 		this.setLayout(new BorderLayout());
 		jBCliente = new JButton("Cliente");
 		jBServidor = new JButton("Servidor");
@@ -30,9 +30,9 @@ public class PanelPrincipal extends JPanel implements VistaPrincipal {
 
 	@Override
 	public void controlador(ActionListener ctr) {
-		jBCliente.setActionCommand(VistaPrincipal.CLIENTE);
+		jBCliente.setActionCommand(MainView.CLIENTE);
 		jBCliente.addActionListener(ctr);
-		jBServidor.setActionCommand(VistaPrincipal.SERVIDOR);
+		jBServidor.setActionCommand(MainView.SERVIDOR);
 		jBServidor.addActionListener(ctr);
 	}
 

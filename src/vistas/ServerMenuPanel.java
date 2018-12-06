@@ -10,20 +10,20 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class PanelMenuServidor extends JPanel implements VistaMenuServidor {
+public class ServerMenuPanel extends JPanel implements ServerMenuView {
 	
 	private JButton jBCrear;
 	private JButton jBVolver;
 	private JTextField jTFIp;
 	private JTextField jTFPort;
 	
-	public PanelMenuServidor() {
+	public ServerMenuPanel() {
 		this.setLayout(new BorderLayout());
 		jBCrear = new JButton("Crear");
 		jBVolver = new JButton("Volver");
 		jTFPort = new JTextField();
 		
-		jTFPort.setText(VistaMenuServidor.PORT);
+		jTFPort.setText(ServerMenuView.PORT);
 	
 		jBCrear.setPreferredSize(new Dimension(200,120));
 		jBVolver.setPreferredSize(new Dimension(200,120));
@@ -48,9 +48,9 @@ public class PanelMenuServidor extends JPanel implements VistaMenuServidor {
 
 	@Override
 	public void controlador(ActionListener ctr) {
-		jBCrear.setActionCommand(VistaMenuServidor.CREAR);
+		jBCrear.setActionCommand(ServerMenuView.CREAR);
 		jBCrear.addActionListener(ctr);
-		jBVolver.setActionCommand(VistaMenuServidor.VOLVER);
+		jBVolver.setActionCommand(ServerMenuView.VOLVER);
 		jBVolver.addActionListener(ctr);
 	}
 	

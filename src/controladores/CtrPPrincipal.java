@@ -6,15 +6,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import vistas.PanelMenuServidor;
-import vistas.VistaMenuServidor;
-import vistas.VistaPrincipal;
+import vistas.ServerMenuPanel;
+import vistas.ServerMenuView;
+import vistas.MainView;
 
 public class CtrPPrincipal implements ActionListener {
 	
-	private VistaPrincipal vistaPrincipal;
+	private MainView vistaPrincipal;
 	
-	public CtrPPrincipal(VistaPrincipal vistaPrincipal) {
+	public CtrPPrincipal(MainView vistaPrincipal) {
 		this.vistaPrincipal = vistaPrincipal;
 	}
 
@@ -24,11 +24,11 @@ public class CtrPPrincipal implements ActionListener {
 		try {
 			switch (command) {
 			
-			case VistaPrincipal.CLIENTE:
+			case MainView.CLIENTE:
 				System.out.println("Cliente");
 				break;
-			case VistaPrincipal.SERVIDOR:
-				VistaMenuServidor vistaMenuServidor = new PanelMenuServidor();
+			case MainView.SERVIDOR:
+				ServerMenuView vistaMenuServidor = new ServerMenuPanel();
 				ActionListener ctrPMenuServidor = new CtrPMenuServidor(vistaMenuServidor);
 				vistaMenuServidor.controlador(ctrPMenuServidor);
 

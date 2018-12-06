@@ -10,32 +10,34 @@ import java.util.TreeSet;
 //TODO Crear una llamada a la clase Server
 public class ConnectionManager implements Runnable {
 	
-	private Thread hilo;
+	private Thread thread;
 	private boolean isRunning;
-	private ServerSocket entrada;
+	private ServerSocket SSocket;
 	private Set<Socket> clients = new TreeSet<Socket>();
 	private HashMap<Socket, User> users;
+	private Server server;
 	
 	public ConnectionManager(int port) {
 		try {
-			entrada = new ServerSocket(port);
-			start();
+			SSocket = new ServerSocket(port);	
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		server = new Server();
+		start();
 	}
 	
 	private void start() {
 		isRunning = true;
-		hilo = new Thread(this);
-		hilo.start();
+		thread = new Thread(this);
+		thread.start();
 	}
 	
 	@Override
 	public void run() {
 		while(isRunning) {
 			try {
-				Socket client = entrada.accept();
+				Socket client = SSocket.accept();
 				Scanner scan = new Scanner(client.getInputStream());
 				User user = new User(scan.nextLine());
 				clients.add(client);

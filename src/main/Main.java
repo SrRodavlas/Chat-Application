@@ -6,14 +6,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import controladores.CtrPPrincipal;
-import vistas.PanelPrincipal;
-import vistas.VistaPrincipal;
+import vistas.MainPanel;
+import vistas.MainView;
+
+	
 
 public class Main {
-
+	
 	public static void main(String[] args)  {
 	
-		VistaPrincipal vistaPrincipal = new PanelPrincipal();
+		MainView vistaPrincipal = new MainPanel();
 		ActionListener ctrPPrincipal = new CtrPPrincipal(vistaPrincipal);
 		vistaPrincipal.controlador(ctrPPrincipal);
 
@@ -23,7 +25,6 @@ public class Main {
 		ventana.setLocationRelativeTo(null);
 		ventana.setContentPane((JPanel) vistaPrincipal);
 		ventana.pack();
-		System.out.print("Hola");
 		
 		
 	}

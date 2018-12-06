@@ -2,7 +2,7 @@ package vistas;
 
 import java.awt.event.ActionListener;
 
-public interface VistaMenuServidor {
+public interface ServerMenuView {
 
 	String CREAR = "C";
 	String VOLVER = "V";

@@ -4,15 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import modelos.ConnectionManager;
-import vistas.PanelMenuServidor;
-import vistas.VistaMenuServidor;
+import vistas.ServerMenuPanel;
+import vistas.ServerMenuView;
 
 public class CtrPMenuServidor implements ActionListener {
 
-	private VistaMenuServidor vistaMenuServidor;
+	private ServerMenuView vistaMenuServidor;
 	private ConnectionManager manager;
 	
-	public CtrPMenuServidor(VistaMenuServidor vistaMenuServidor) {
+	public CtrPMenuServidor(ServerMenuView vistaMenuServidor) {
 		this.vistaMenuServidor = vistaMenuServidor;
 	}
 	
@@ -22,12 +22,12 @@ public class CtrPMenuServidor implements ActionListener {
 		try {
 			switch (command) {
 			
-			case VistaMenuServidor.CREAR:
-				int port = Integer.parseInt(((PanelMenuServidor)vistaMenuServidor).getPort());
+			case ServerMenuView.CREAR:
+				int port = Integer.parseInt(((ServerMenuPanel)vistaMenuServidor).getPort());
 				manager = new ConnectionManager(port);
 				//TODO Implementar la llamada del cliente configurado
 				break;
-			case VistaMenuServidor.VOLVER:
+			case ServerMenuView.VOLVER:
 				System.out.println("Volver");
 				break;
 			

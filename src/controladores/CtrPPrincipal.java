@@ -43,7 +43,7 @@ public class CtrPPrincipal implements ActionListener {
 			}
 			
 		} catch (RuntimeException e) {
-			
+			e.getStackTrace();
 		}
 	}
 

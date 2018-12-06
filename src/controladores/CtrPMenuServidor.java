@@ -3,12 +3,14 @@ package controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import modelos.ConnectionManager;
+import vistas.PanelMenuServidor;
 import vistas.VistaMenuServidor;
-import vistas.VistaPrincipal;
 
 public class CtrPMenuServidor implements ActionListener {
 
 	private VistaMenuServidor vistaMenuServidor;
+	private ConnectionManager manager;
 	
 	public CtrPMenuServidor(VistaMenuServidor vistaMenuServidor) {
 		this.vistaMenuServidor = vistaMenuServidor;
@@ -21,7 +23,9 @@ public class CtrPMenuServidor implements ActionListener {
 			switch (command) {
 			
 			case VistaMenuServidor.CREAR:
-				System.out.println("Crear");
+				int port = Integer.parseInt(((PanelMenuServidor)vistaMenuServidor).getPort());
+				manager = new ConnectionManager(port);
+				//TODO Implementar la llamada del cliente configurado
 				break;
 			case VistaMenuServidor.VOLVER:
 				System.out.println("Volver");

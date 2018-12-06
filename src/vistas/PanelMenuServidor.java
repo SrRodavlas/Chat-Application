@@ -12,10 +12,10 @@ import javax.swing.JTextField;
 
 public class PanelMenuServidor extends JPanel implements VistaMenuServidor {
 	
-	JButton jBCrear;
-	JButton jBVolver;
-	JTextField jTFIp;
-	JTextField jTFPort;
+	private JButton jBCrear;
+	private JButton jBVolver;
+	private JTextField jTFIp;
+	private JTextField jTFPort;
 	
 	public PanelMenuServidor() {
 		this.setLayout(new BorderLayout());
@@ -23,6 +23,7 @@ public class PanelMenuServidor extends JPanel implements VistaMenuServidor {
 		jBVolver = new JButton("Volver");
 		jTFPort = new JTextField();
 		
+		jTFPort.setText(VistaMenuServidor.PORT);
 	
 		jBCrear.setPreferredSize(new Dimension(200,120));
 		jBVolver.setPreferredSize(new Dimension(200,120));
@@ -39,6 +40,10 @@ public class PanelMenuServidor extends JPanel implements VistaMenuServidor {
 		add(jPSur, BorderLayout.SOUTH);
 		add(jPNorte, BorderLayout.NORTH);
 		
+	}
+	
+	public String getPort() {
+		return jTFPort.getText();
 	}
 
 	@Override

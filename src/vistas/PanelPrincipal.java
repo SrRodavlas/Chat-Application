@@ -10,9 +10,8 @@ import javax.swing.JPanel;
 
 public class PanelPrincipal extends JPanel implements VistaPrincipal {
 	
-	
-	JButton jBCliente;
-	JButton jBServidor;
+	private JButton jBCliente;
+	private JButton jBServidor;
 	
 	public PanelPrincipal() {
 		this.setLayout(new BorderLayout());
